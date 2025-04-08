@@ -1,13 +1,13 @@
 import cv2
 
-cam = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
-if not cam.isOpened():
+if not cap.isOpened():
     print("Kamera açılamadı!")
     exit()
 
 while True:
-    success, frame = cam.read()
+    success, frame = cap.read()
     if not success:
         break
 
@@ -16,5 +16,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
-cam.release()
+cap.release()
 cv2.destroyAllWindows()
