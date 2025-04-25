@@ -11,6 +11,7 @@ cv2.setWindowProperty("Kamera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 AddNotepad.createCSV()
 AddNotepad.addNote("Phone")
 
+
 while True:
     success, frame = cap.read()
     if not success:
