@@ -25,3 +25,6 @@ def addNote(noteText,value):
     global notepad
     notepad = notepad._append(new_note,ignore_index=True)
     notepad.to_csv("notepad.csv",index=False)
+
+def neYapanYarram():
+    print("Amı götü kes")
