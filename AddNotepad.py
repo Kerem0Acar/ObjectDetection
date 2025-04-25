@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-notepad = pd.DataFrame(columns=['Date', 'Note'])
+notepad = pd.DataFrame(columns=['Date', 'Note', 'Value'])
 file_path = "notepad.csv"
 
 def createCSV():
