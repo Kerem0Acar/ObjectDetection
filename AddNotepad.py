@@ -20,7 +20,7 @@ def getObject():
 
 
 
-def addNode(noteText):
+def addNote(noteText):
     date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     new_note = {'Date': date_str, 'Note': noteText}
     global notepad
