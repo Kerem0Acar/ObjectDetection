@@ -1,5 +1,5 @@
 import  cv2
-import AddNodepad
+import AddNotepad
 
 cap = cv2.VideoCapture(0)
 
@@ -8,8 +8,8 @@ if not cap.isOpened():
     exit()
 cv2.namedWindow("Kamera",cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Kamera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-AddNodepad.createCSV()
-AddNodepad.addNode("Phone")
+AddNotepad.createCSV()
+AddNotepad.addNode("Phone")
 
 while True:
     success, frame = cap.read()
