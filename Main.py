@@ -9,7 +9,7 @@ if not cap.isOpened():
 cv2.namedWindow("Kamera",cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Kamera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 AddNotepad.createCSV()
-AddNotepad.addNote("Phone")
+AddNotepad.addNote("Phone", 0.84)
 
 
 while True:
