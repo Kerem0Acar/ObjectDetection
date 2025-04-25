@@ -15,6 +15,8 @@ def checkNotepad():
     if os.path.exists(file_path):
         print(f"{file_path} is already exist" )
 
+def getObject():
+    pass
 
 
 
