@@ -1,7 +1,10 @@
 import  cv2
 import AddNotepad
+from ultralytics import YOLO
 
 cap = cv2.VideoCapture(0)
+
+model = YOLO("Model1/best.pt")
 
 if not cap.isOpened():
     print("Camera didn't open")
@@ -19,7 +22,10 @@ while True:
     if not success:
         break
 
-    cv2.imshow("Kamera", frame)
+    results = model(frame)
+    annotated_frame = results[0].plot()
+
+    cv2.imshow("Kamera",annotated_frame)
 
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
