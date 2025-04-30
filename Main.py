@@ -4,7 +4,11 @@ from ultralytics import YOLO
 
 cap = cv2.VideoCapture(0)
 
-model = YOLO("Model1/best.pt")
+model1 = r"v1-yolo8n-100-epoches/best.pt"
+model2 = r"v2-yolo11n-150-epoches/best.pt"
+
+model = YOLO(model2)
+
 
 if not cap.isOpened():
     print("Camera didn't open")
@@ -22,7 +26,7 @@ while True:
     if not success:
         break
 
-    results = model.predict(frame, conf=0.4,         verbose=False)
+    results = model.predict(frame, conf=0.6,verbose=False)
     annotated_frame = results[0].plot()
 
     cv2.imshow("Kamera",annotated_frame)
