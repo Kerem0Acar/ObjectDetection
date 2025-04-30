@@ -22,7 +22,7 @@ while True:
     if not success:
         break
 
-    results = model(frame)
+    results = model.predict(frame, conf=0.4,         verbose=False)
     annotated_frame = results[0].plot()
 
     cv2.imshow("Kamera",annotated_frame)
