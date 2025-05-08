@@ -6,8 +6,10 @@ cap = cv2.VideoCapture(0)
 
 model1 = r"v1-yolo8n-100-epoches/best.pt"
 model2 = r"v2-yolo11n-150-epoches/best.pt"
+model3 = r"v3-yolo11n-200-epoches/best.pt"
 
-model = YOLO(model2)
+
+model = YOLO(model3)
 
 
 if not cap.isOpened():
@@ -26,7 +28,7 @@ while True:
     if not success:
         break
 
-    results = model.predict(frame, conf=0.6,verbose=False)
+    results = model.predict(frame, conf=0.5,verbose=False)
     annotated_frame = results[0].plot()
 
     cv2.imshow("Kamera",annotated_frame)
