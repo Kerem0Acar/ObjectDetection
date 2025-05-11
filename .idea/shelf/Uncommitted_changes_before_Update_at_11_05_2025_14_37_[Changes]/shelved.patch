@@ -1,0 +1,144 @@
+Index: Main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import  cv2\r\nimport AddNotepad\r\nfrom ultralytics import YOLO\r\n\r\ncap = cv2.VideoCapture(0)\r\n\r\nmodel1 = r\"v1-yolo8n-100-epoches/best.pt\"\r\nmodel2 = r\"v2-yolo11n-150-epoches/best.pt\"\r\nmodel3 = r\"v3-yolo11n-200-epoches/best.pt\"\r\n\r\n\r\nmodel = YOLO(\"yolo11n.pt\")\r\n\r\n\r\nif not cap.isOpened():\r\n    print(\"Camera didn't open\")\r\n    exit()\r\n\r\ncv2.namedWindow(\"Kamera\",cv2.WINDOW_NORMAL)\r\ncv2.setWindowProperty(\"Kamera\", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)\r\n\r\nAddNotepad.createCSV()\r\nAddNotepad.addNote(\"Phone\", 0.84)\r\n\r\n\r\nwhile True:\r\n    success, frame = cap.read()\r\n    if not success:\r\n        break\r\n\r\n    results = model.predict(frame, conf=0.5,verbose=False)\r\n    annotated_frame = results[0].plot()\r\n\r\n    cv2.imshow(\"Kamera\",annotated_frame)\r\n\r\n\r\n    if cv2.waitKey(1) & 0xFF == ord(\"q\"):\r\n        break\r\n\r\ncap.release()\r\ncv2.destroyAllWindows()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.py b/Main.py
+--- a/Main.py	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
++++ b/Main.py	(date 1746893975952)
+@@ -7,6 +7,7 @@
+ model1 = r"v1-yolo8n-100-epoches/best.pt"
+ model2 = r"v2-yolo11n-150-epoches/best.pt"
+ model3 = r"v3-yolo11n-200-epoches/best.pt"
++#model4 = r"v4-yolo11n-150-epoches/best.pt" // low toothbrush accuracy
+ 
+ 
+ model = YOLO("yolo11n.pt")
+@@ -28,7 +29,7 @@
+     if not success:
+         break
+ 
+-    results = model.predict(frame, conf=0.5,verbose=False)
++    results = model.predict(frame, conf=0.3,verbose=False)
+     annotated_frame = results[0].plot()
+ 
+     cv2.imshow("Kamera",annotated_frame)
+Index: notepad.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/notepad.csv b/notepad.csv
+deleted file mode 100644
+--- a/notepad.csv	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
++++ /dev/null	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
+@@ -1,2 +0,0 @@
+-Date,Note,Value
+-2025-05-10 18:02:09,Phone,0.84
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50__Changes_.xml	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
++++ /dev/null	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]" date="1745589035777" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 25.04.2025 16:50 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
++++ /dev/null	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
+@@ -1,14 +0,0 @@
+-Index: Main.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>print(\"HELLO WORLD\")\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Main.py b/Main.py
+---- a/Main.py	(revision 95807c0bd3c68e4459851e41d92d35cbe7375ad1)
+-+++ b/Main.py	(date 1744555722191)
+-@@ -1,2 +1,2 @@
+--print("HELLO WORLD")
+-+
+- 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dd51156-9c7d-4dee-a209-d9e4e083810d\" name=\"Changes\" comment=\"Adding to table in csv format\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Kerem0Acar&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Kerem0Acar/ObjectDetection&quot;,\r\n    &quot;accountId&quot;: &quot;ef3095f7-9b1b-4d80-b2a6-be60ee915ed1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2ulKN257JtfHyOyVxFdMSObwbpE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Python.AddNodepad.executor\": \"Run\",\r\n    \"Python.AddNotepad.executor\": \"Run\",\r\n    \"Python.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"last_opened_file_path\": \"C:/Users/krmcr/PycharmProjects/ObjectDetection\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dd51156-9c7d-4dee-a209-d9e4e083810d\" name=\"Changes\" comment=\"\" />\r\n      <created>1742817676206</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1742817676206</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818509610</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818509610</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818559931</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818559931</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818862478</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818862478</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Aboo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742819209247</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742819209247</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590745677</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590745677</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590848992</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590848992</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590896061</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590896062</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590924942</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590924942</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590955106</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590955106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598259676</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598259676</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598449259</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598449259</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598539272</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598539272</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598736868</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598736868</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745600942630</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745600942630</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"carcurt\" />\r\n    <MESSAGE value=\"Aboo\" />\r\n    <MESSAGE value=\"Adding to table in csv format\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Adding to table in csv format\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ebcd8a8b4f29fa990ca0005010787ab92b859fc9)
++++ b/.idea/workspace.xml	(date 1746893975986)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3dd51156-9c7d-4dee-a209-d9e4e083810d" name="Changes" comment="Adding to table in csv format" />
++    <list default="true" id="3dd51156-9c7d-4dee-a209-d9e4e083810d" name="Changes" comment="Adding to table in csv format">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/notepad.csv" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -46,18 +52,18 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Python.AddNodepad.executor": "Run",
+-    "Python.AddNotepad.executor": "Run",
+-    "Python.Main.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
+-    "last_opened_file_path": "C:/Users/krmcr/PycharmProjects/ObjectDetection",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Python.AddNodepad.executor&quot;: &quot;Run&quot;,
++    &quot;Python.AddNotepad.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/krmcr/PycharmProjects/ObjectDetection&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -186,7 +192,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1745600942630</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="Adding to table in csv format">
++      <option name="closed" value="true" />
++      <created>1745602431393</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1745602431393</updated>
++    </task>
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
