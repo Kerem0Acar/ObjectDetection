@@ -8,9 +8,10 @@ cap = cv2.VideoCapture(0)
 model1 = r"v1-yolo8n-100-epoches/best.pt"
 model2 = r"v2-yolo11n-150-epoches/best.pt"
 model3 = r"v3-yolo11n-200-epoches/best.pt"
+model4 = r"v4-yolo11n-150-epoches/best.pt"
 
 
-model = YOLO("yolo11n.pt")
+model = YOLO(model4)
 
 if not cap.isOpened():
     print("Camera didn't open")
