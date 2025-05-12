@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from datetime import datetime
+import time
 
 notepad = pd.DataFrame(columns=['Date', 'Note', 'Value'])
 file_path = "notepad.csv"
@@ -24,7 +25,7 @@ def addNote(noteText,value):
     new_note = {'Date': date_str, 'Note': noteText,'Value': value}
     global notepad
     notepad = notepad._append(new_note,ignore_index=True)
-    notepad.to_csv("notepad.csv",index=False)
+    notepad.to_csv(file_path,index=False)
 
 def check():
     print("Checking")
