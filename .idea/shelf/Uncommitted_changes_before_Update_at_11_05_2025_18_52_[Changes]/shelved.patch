@@ -1,0 +1,325 @@
+Index: notepad.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Date,Note,Value\r\n2025-05-11 14:37:36,Phone,0.84\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/notepad.csv b/notepad.csv
+--- a/notepad.csv	(revision 4a1eeb7cc6d8168e0613d297b0f76dc0640934bb)
++++ b/notepad.csv	(date 1746963642055)
+@@ -1,2 +1,206 @@
+ Date,Note,Value
+-2025-05-11 14:37:36,Phone,0.84
++2025-05-11 14:40:30,person,0.9282780885696411
++2025-05-11 14:40:30,person,0.9273563623428345
++2025-05-11 14:40:30,person,0.9266270995140076
++2025-05-11 14:40:31,person,0.9266270995140076
++2025-05-11 14:40:31,person,0.9286263585090637
++2025-05-11 14:40:31,person,0.9290382862091064
++2025-05-11 14:40:31,person,0.929174542427063
++2025-05-11 14:40:31,person,0.9339296221733093
++2025-05-11 14:40:31,person,0.9339296221733093
++2025-05-11 14:40:31,person,0.9296081066131592
++2025-05-11 14:40:31,person,0.9344546794891357
++2025-05-11 14:40:31,person,0.9328829050064087
++2025-05-11 14:40:31,person,0.9389759302139282
++2025-05-11 14:40:31,person,0.9392848014831543
++2025-05-11 14:40:31,person,0.9392848014831543
++2025-05-11 14:40:31,person,0.9350205659866333
++2025-05-11 14:40:31,person,0.9313564300537109
++2025-05-11 14:40:31,person,0.9352654218673706
++2025-05-11 14:40:32,person,0.9234476685523987
++2025-05-11 14:40:32,person,0.9052162170410156
++2025-05-11 14:40:32,person,0.9052162170410156
++2025-05-11 14:40:32,person,0.847235381603241
++2025-05-11 14:40:32,person,0.7816919088363647
++2025-05-11 14:40:32,cell phone,0.8225894570350647
++2025-05-11 14:40:32,person,0.575598418712616
++2025-05-11 14:40:32,cell phone,0.8750486969947815
++2025-05-11 14:40:32,person,0.8559957146644592
++2025-05-11 14:40:32,cell phone,0.8750486969947815
++2025-05-11 14:40:32,person,0.8559957146644592
++2025-05-11 14:40:32,cell phone,0.8892694115638733
++2025-05-11 14:40:32,person,0.8158522844314575
++2025-05-11 14:40:32,cell phone,0.9382357001304626
++2025-05-11 14:40:32,person,0.8470003008842468
++2025-05-11 14:40:32,cell phone,0.9225276708602905
++2025-05-11 14:40:32,person,0.8435457944869995
++2025-05-11 14:40:32,cell phone,0.903652012348175
++2025-05-11 14:40:32,person,0.8242829442024231
++2025-05-11 14:40:32,cell phone,0.886147677898407
++2025-05-11 14:40:32,person,0.8361645936965942
++2025-05-11 14:40:32,cell phone,0.9240880608558655
++2025-05-11 14:40:32,person,0.8429686427116394
++2025-05-11 14:40:33,cell phone,0.9240880608558655
++2025-05-11 14:40:33,person,0.8429686427116394
++2025-05-11 14:40:33,cell phone,0.9200260639190674
++2025-05-11 14:40:33,person,0.8567494750022888
++2025-05-11 14:40:33,cell phone,0.9100449681282043
++2025-05-11 14:40:33,person,0.8604997992515564
++2025-05-11 14:40:33,cell phone,0.9238908886909485
++2025-05-11 14:40:33,person,0.854426383972168
++2025-05-11 14:40:33,cell phone,0.9458869695663452
++2025-05-11 14:40:33,person,0.8368834853172302
++2025-05-11 14:40:33,cell phone,0.9266317486763
++2025-05-11 14:40:33,person,0.7375944256782532
++2025-05-11 14:40:33,cell phone,0.9444836378097534
++2025-05-11 14:40:33,person,0.7951227426528931
++2025-05-11 14:40:33,cell phone,0.931353747844696
++2025-05-11 14:40:33,person,0.8086410164833069
++2025-05-11 14:40:33,cell phone,0.9213443398475647
++2025-05-11 14:40:33,person,0.880315363407135
++2025-05-11 14:40:33,cell phone,0.9213443398475647
++2025-05-11 14:40:33,person,0.880315363407135
++2025-05-11 14:40:33,cell phone,0.9531176686286926
++2025-05-11 14:40:33,person,0.8908825516700745
++2025-05-11 14:40:33,cell phone,0.9433874487876892
++2025-05-11 14:40:33,person,0.900263249874115
++2025-05-11 14:40:33,cell phone,0.9543797969818115
++2025-05-11 14:40:33,person,0.8913481831550598
++2025-05-11 14:40:34,cell phone,0.9543797969818115
++2025-05-11 14:40:34,person,0.8913481831550598
++2025-05-11 14:40:34,cell phone,0.9364620447158813
++2025-05-11 14:40:34,person,0.8881531953811646
++2025-05-11 14:40:34,cell phone,0.9364620447158813
++2025-05-11 14:40:34,person,0.8881531953811646
++2025-05-11 14:40:34,cell phone,0.9398829936981201
++2025-05-11 14:40:34,person,0.8809995651245117
++2025-05-11 14:40:34,cell phone,0.9492067694664001
++2025-05-11 14:40:34,person,0.9013751149177551
++2025-05-11 14:40:34,cell phone,0.9488275647163391
++2025-05-11 14:40:34,person,0.8884965777397156
++2025-05-11 14:40:34,cell phone,0.9653766751289368
++2025-05-11 14:40:34,person,0.9019922018051147
++2025-05-11 14:40:34,person,0.8917368054389954
++2025-05-11 14:40:34,person,0.8923712968826294
++2025-05-11 14:40:34,person,0.8923712968826294
++2025-05-11 14:40:34,person,0.8517101407051086
++2025-05-11 14:40:34,person,0.9323413372039795
++2025-05-11 14:40:34,person,0.9373252987861633
++2025-05-11 14:40:34,person,0.9373252987861633
++2025-05-11 14:40:35,person,0.9255614876747131
++2025-05-11 14:40:35,person,0.9174177050590515
++2025-05-11 14:40:35,person,0.9126718640327454
++2025-05-11 14:40:35,person,0.9126718640327454
++2025-05-11 14:40:35,person,0.8947353363037109
++2025-05-11 14:40:35,person,0.9352174997329712
++2025-05-11 14:40:35,person,0.9135433435440063
++2025-05-11 14:40:35,person,0.9169006943702698
++2025-05-11 14:40:35,person,0.9169006943702698
++2025-05-11 14:40:35,person,0.9181438088417053
++2025-05-11 14:40:35,person,0.904792070388794
++2025-05-11 14:40:35,person,0.9103811383247375
++2025-05-11 14:40:35,person,0.902316689491272
++2025-05-11 14:40:35,person,0.9039703607559204
++2025-05-11 14:40:35,person,0.9039703607559204
++2025-05-11 14:40:36,person,0.9130832552909851
++2025-05-11 14:40:36,person,0.905546247959137
++2025-05-11 14:40:36,person,0.9032553434371948
++2025-05-11 14:40:36,person,0.9099088311195374
++2025-05-11 14:40:36,person,0.9099088311195374
++2025-05-11 14:40:36,person,0.9246290922164917
++2025-05-11 14:40:36,person,0.9310435056686401
++2025-05-11 14:40:36,person,0.9336147904396057
++2025-05-11 14:40:36,person,0.9245715141296387
++2025-05-11 14:40:36,person,0.9239278435707092
++2025-05-11 14:40:36,person,0.9272640943527222
++2025-05-11 14:40:36,person,0.9221809506416321
++2025-05-11 14:40:36,person,0.9221809506416321
++2025-05-11 14:40:36,person,0.9230850338935852
++2025-05-11 14:40:37,person,0.9318921566009521
++2025-05-11 14:40:37,person,0.9330952167510986
++2025-05-11 14:40:37,person,0.9241886138916016
++2025-05-11 14:40:37,person,0.9231763482093811
++2025-05-11 14:40:37,person,0.9231763482093811
++2025-05-11 14:40:37,person,0.9196545481681824
++2025-05-11 14:40:37,person,0.8751437067985535
++2025-05-11 14:40:37,person,0.8656193614006042
++2025-05-11 14:40:37,person,0.8704895377159119
++2025-05-11 14:40:37,person,0.847441554069519
++2025-05-11 14:40:37,person,0.8347491025924683
++2025-05-11 14:40:37,person,0.8347491025924683
++2025-05-11 14:40:37,person,0.8137568235397339
++2025-05-11 14:40:37,person,0.7920138835906982
++2025-05-11 14:40:37,person,0.8126354217529297
++2025-05-11 14:40:38,person,0.8126354217529297
++2025-05-11 14:40:38,person,0.8358418941497803
++2025-05-11 14:40:38,remote,0.8247626423835754
++2025-05-11 14:40:38,person,0.835549533367157
++2025-05-11 14:40:38,person,0.8408316373825073
++2025-05-11 14:40:38,person,0.7959721684455872
++2025-05-11 14:40:38,remote,0.7656847238540649
++2025-05-11 14:40:38,person,0.7959721684455872
++2025-05-11 14:40:38,remote,0.7656847238540649
++2025-05-11 14:40:38,person,0.8046859502792358
++2025-05-11 14:40:38,person,0.8046859502792358
++2025-05-11 14:40:38,person,0.7973772287368774
++2025-05-11 14:40:38,person,0.8276404738426208
++2025-05-11 14:40:38,person,0.8072343468666077
++2025-05-11 14:40:38,person,0.8055233955383301
++2025-05-11 14:40:38,person,0.8055233955383301
++2025-05-11 14:40:39,person,0.8105093240737915
++2025-05-11 14:40:39,person,0.8105093240737915
++2025-05-11 14:40:39,person,0.804614782333374
++2025-05-11 14:40:39,person,0.8301188349723816
++2025-05-11 14:40:39,bottle,0.6945475935935974
++2025-05-11 14:40:39,person,0.8338088393211365
++2025-05-11 14:40:39,bottle,0.6260152459144592
++2025-05-11 14:40:39,person,0.802431046962738
++2025-05-11 14:40:39,bottle,0.5671168565750122
++2025-05-11 14:40:39,person,0.8128894567489624
++2025-05-11 14:40:39,bottle,0.6503514647483826
++2025-05-11 14:40:39,person,0.7999514937400818
++2025-05-11 14:40:39,remote,0.5899786353111267
++2025-05-11 14:40:39,person,0.8188900947570801
++2025-05-11 14:40:39,person,0.8188900947570801
++2025-05-11 14:40:39,person,0.8085347414016724
++2025-05-11 14:40:39,remote,0.6540725827217102
++2025-05-11 14:40:39,person,0.8017879724502563
++2025-05-11 14:40:39,remote,0.7881553173065186
++2025-05-11 14:40:39,person,0.7992697954177856
++2025-05-11 14:40:39,remote,0.5822838544845581
++2025-05-11 14:40:39,person,0.8035072088241577
++2025-05-11 14:40:40,person,0.8035072088241577
++2025-05-11 14:40:40,person,0.8139875531196594
++2025-05-11 14:40:40,person,0.8086307644844055
++2025-05-11 14:40:40,remote,0.7387509942054749
++2025-05-11 14:40:40,person,0.8210844993591309
++2025-05-11 14:40:40,remote,0.556496262550354
++2025-05-11 14:40:40,person,0.8516461253166199
++2025-05-11 14:40:40,bottle,0.5546712279319763
++2025-05-11 14:40:40,person,0.9032178521156311
++2025-05-11 14:40:40,person,0.9032178521156311
++2025-05-11 14:40:40,person,0.8779794573783875
++2025-05-11 14:40:40,person,0.5354259014129639
++2025-05-11 14:40:40,person,0.897098958492279
++2025-05-11 14:40:40,person,0.8894932270050049
++2025-05-11 14:40:40,person,0.8847972750663757
++2025-05-11 14:40:40,person,0.8847972750663757
++2025-05-11 14:40:40,person,0.8820621967315674
++2025-05-11 14:40:40,person,0.8899345993995667
++2025-05-11 14:40:40,person,0.9007014036178589
++2025-05-11 14:40:41,person,0.9007014036178589
++2025-05-11 14:40:41,person,0.909716010093689
++2025-05-11 14:40:41,person,0.9119952321052551
++2025-05-11 14:40:41,person,0.9001630544662476
++2025-05-11 14:40:41,person,0.8905375599861145
++2025-05-11 14:40:41,person,0.8932893872261047
++2025-05-11 14:40:41,person,0.8932893872261047
++2025-05-11 14:40:41,person,0.894016444683075
++2025-05-11 14:40:41,person,0.8987072706222534
++2025-05-11 14:40:41,person,0.9014178514480591
++2025-05-11 14:40:41,person,0.9038631916046143
++2025-05-11 14:40:41,person,0.9038631916046143
++2025-05-11 14:40:41,person,0.8977550864219666
++2025-05-11 14:40:41,person,0.9009467363357544
++2025-05-11 14:40:41,person,0.8956590890884399
++2025-05-11 14:40:42,person,0.8956590890884399
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_25_04_2025_16_50_[Changes]/shelved.patch	(revision 4a1eeb7cc6d8168e0613d297b0f76dc0640934bb)
++++ /dev/null	(revision 4a1eeb7cc6d8168e0613d297b0f76dc0640934bb)
+@@ -1,14 +0,0 @@
+-Index: Main.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>print(\"HELLO WORLD\")\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Main.py b/Main.py
+---- a/Main.py	(revision 95807c0bd3c68e4459851e41d92d35cbe7375ad1)
+-+++ b/Main.py	(date 1744555722191)
+-@@ -1,2 +1,2 @@
+--print("HELLO WORLD")
+-+
+- 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dd51156-9c7d-4dee-a209-d9e4e083810d\" name=\"Changes\" comment=\"Adding to table in csv format\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Kerem0Acar&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Kerem0Acar/ObjectDetection&quot;,\r\n    &quot;accountId&quot;: &quot;ef3095f7-9b1b-4d80-b2a6-be60ee915ed1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2ulKN257JtfHyOyVxFdMSObwbpE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Python.AddNodepad.executor\": \"Run\",\r\n    \"Python.AddNotepad.executor\": \"Run\",\r\n    \"Python.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"last_opened_file_path\": \"C:/Users/krmcr/PycharmProjects/ObjectDetection\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dd51156-9c7d-4dee-a209-d9e4e083810d\" name=\"Changes\" comment=\"\" />\r\n      <created>1742817676206</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1742817676206</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818509610</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818509610</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818559931</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818559931</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"carcurt\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742818862478</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742818862478</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Aboo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742819209247</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742819209247</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590745677</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590745677</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590848992</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590848992</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590896061</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590896062</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590924942</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590924942</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745590955106</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745590955106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598259676</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598259676</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598449259</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598449259</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598539272</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598539272</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745598736868</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745598736868</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Adding to table in csv format\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745600942630</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745600942630</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"carcurt\" />\r\n    <MESSAGE value=\"Aboo\" />\r\n    <MESSAGE value=\"Adding to table in csv format\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Adding to table in csv format\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4a1eeb7cc6d8168e0613d297b0f76dc0640934bb)
++++ b/.idea/workspace.xml	(date 1746963655786)
+@@ -4,7 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3dd51156-9c7d-4dee-a209-d9e4e083810d" name="Changes" comment="Adding to table in csv format" />
++    <list default="true" id="3dd51156-9c7d-4dee-a209-d9e4e083810d" name="Changes" comment="Idk what is this">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/notepad.csv" beforeDir="false" afterPath="$PROJECT_DIR$/notepad.csv" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -46,18 +49,18 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Python.AddNodepad.executor": "Run",
+-    "Python.AddNotepad.executor": "Run",
+-    "Python.Main.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
+-    "last_opened_file_path": "C:/Users/krmcr/PycharmProjects/ObjectDetection",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Python.AddNodepad.executor&quot;: &quot;Run&quot;,
++    &quot;Python.AddNotepad.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/krmcr/PycharmProjects/ObjectDetection&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -186,13 +189,30 @@
+       <option name="project" value="LOCAL" />
+       <updated>1745600942630</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="Idk what is this">
++      <option name="closed" value="true" />
++      <created>1746963593327</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1746963593327</updated>
++    </task>
++    <task id="LOCAL-00016" summary="Idk what is this">
++      <option name="closed" value="true" />
++      <created>1746963605226</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1746963605226</updated>
++    </task>
++    <option name="localTasksCounter" value="17" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="carcurt" />
+     <MESSAGE value="Aboo" />
+     <MESSAGE value="Adding to table in csv format" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Adding to table in csv format" />
++    <MESSAGE value="Idk what is this" />
++    <option name="LAST_COMMIT_MESSAGE" value="Idk what is this" />
+   </component>
+ </project>
+\ No newline at end of file
