@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 import pandas as pd
+import time
 
 notepad = pd.DataFrame(columns=['Date', 'Note', 'Value'])
 file_path = "notepad.csv"
