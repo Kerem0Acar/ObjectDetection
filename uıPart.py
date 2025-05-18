@@ -5,3 +5,5 @@ def start():
     app = QApplication([])
     app.exec_()
 
+
+print("ASDASD")
