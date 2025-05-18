@@ -1,2 +1,7 @@
-from PyQt5 import *
-#asdasdasd
+from PyQt5.QtWidgets import *
+
+
+def start():
+    app = QApplication([])
+    app.exec_()
+
