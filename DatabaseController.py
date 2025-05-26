@@ -1,5 +1,4 @@
 import sqlite3
-import re
 
 conn = sqlite3.connect("ObjectDetection.db")
 cursor = conn.cursor()
