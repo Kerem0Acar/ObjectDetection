@@ -1,10 +1,10 @@
 import sys
 import cv2
-from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-import numpy as np
+from PyQt5.QtWidgets import *
 from ultralytics import YOLO
+
 
 class ObjectDetectionGUI(QMainWindow):
     def __init__(self):
@@ -155,7 +155,7 @@ class ObjectDetectionGUI(QMainWindow):
             "v3-yolo11n-200-epoches(Phone and Glasses)/best.pt",
             "v4-yolo11n-150-epoches(ToothBrush Sneakers Phone)/best.pt",
             "yolo11n.pt",
-            "yolov12.pt"
+            "yolov12n.pt"
         ])
         model_layout.addWidget(self.model_combo)
         controls_layout.addLayout(model_layout)
