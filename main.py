@@ -1,4 +1,4 @@
-import uıPart
+import uiPart
 
 if __name__ == "__main__":
-    uıPart.start()
+
