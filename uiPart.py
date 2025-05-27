@@ -307,8 +307,13 @@ class ObjectDetectionGUI(QMainWindow):
                 
                 # Update results text
                 self.update_results(results)
-            
-            # Convert frame to Qt format and display
+
+                        # Convert frame to Qt format and display
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            h, w, ch = rgb_frame.shape
+            bytes_per_line = ch * w
+            qt_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
+            scaled_image = qt_image.scaled(self.camera_label.size(), Qt.KeepAspectRatio)            
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
@@ -334,10 +339,7 @@ class ObjectDetectionGUI(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    app.setStyle('Fusion')  # Modern looking style
+    app.setStyle('Fusion')
     window = ObjectDetectionGUI()
     window.show()
-    sys.exit(app.exec_()) 
-
-
-
+    sys.exit(app.exec_())
