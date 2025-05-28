@@ -33,7 +33,4 @@ def gathering_objects():
     for row in rows:
         print(row)
 
-#creating_table()
-inserting_table("Object Name","Accuracy")
-
 

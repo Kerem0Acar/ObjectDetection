@@ -325,7 +325,8 @@ class ObjectDetectionGUI(QMainWindow):
 
         text = self.results_text.toPlainText()
         objects, accuracys = text.split(":",1)
-        Database
+        Database.creating_table()
+        Database.inserting_table(objects,accuracys)
         QMessageBox.information(self, "Success", "Results saved successfully!")
 
 def main():
