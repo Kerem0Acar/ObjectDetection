@@ -1,58 +1,39 @@
+from datetime import datetime
 import sqlite3
 
 conn = sqlite3.connect("ObjectDetection.db")
 cursor = conn.cursor()
 
-#Get username and password from ui
-def register():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
+#Creating table
+def creating_table():
 
-    try:
-        cursor.execute('INSERT INTO Users (username, password) VALUES (?, ?)', (username, password))
-        conn.commit()
-        print("User added successfully!")
-    except sqlite3.IntegrityError:
-        print("Error: Username already exists.")
-
-#Get username and password from ui
-def login():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
-
-    try:
-        cursor.execute('INSERT INTO Users (username, password) VALUES (?, ?)', (username, password))
-        conn.commit()
-        print(username + " login successfully!")
-    except sqlite3.IntegrityError:
-        print("Error: Username or password is wrong!.")
-
-#Creating table --- tableName is the name that get from which user use the program
-def creating_table(tableName,objectName,date):
-
-    cursor.execute("SELECT "+tableName+" FROM "+" sqlite_master WHERE type='table' AND name=?:",(tableName,))
-    exists = cursor.fetchone()
-    if exists:
-        print("Table already exists")
-    else:
         cursor.execute(f'''
-                    CREATE TABLE {tableName} (
-                        {objectName} TEXT NOT NULL,
-                        {date} TEXT NOT NULL
+                    CREATE TABLE IF NOT EXISTS Objects (
+                        ObjectName TEXT NOT NULL,
+                        Accuracy TEXT NOT NULL,
+                        Date TEXT NOT NULL
                     )
                 ''')
         conn.commit()
-        print(f"Table '{tableName}' has been created.")
+        print(f"Table Objects has been created.")
 
 #Inserting table
-def inserting_table(tableName,objectName,date):
-    cursor.execute("INSERT INTO "+tableName+" (objectName, date) VALUES (?, ?)",(objectName,date))
+def inserting_table(objectName,accuracy):
+    now = datetime.now()
+    date_string = now.strftime("%d-%m-%Y %H:%M:%S")
+
+    cursor.execute("INSERT INTO Objects (ObjectName,Accuracy, Date) VALUES (?, ?, ?)",(objectName,accuracy,date_string))
     conn.commit()
 
 #Gathering object
-def gathering_objects(tableName):
-    cursor.execute("SELECT * FROM Users")
+def gathering_objects():
+    cursor.execute("SELECT * FROM Objects")
     rows = cursor.fetchall()
 
     for row in rows:
         print(row)
+
+creating_table()
+inserting_table("Object Name","Accuracy")
+gathering_objects()
+
