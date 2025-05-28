@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import *
 from ultralytics import YOLO
 
 
+
 class ObjectDetectionGUI(QMainWindow):
     def __init__(self):
         super().__init__()
