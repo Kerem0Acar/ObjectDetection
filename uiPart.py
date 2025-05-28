@@ -234,16 +234,6 @@ class ObjectDetectionGUI(QMainWindow):
         if self.camera is None:
             self.camera = cv2.VideoCapture(0)
 
-            # --- Example: Attempt to set resolution ---
-            # self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-            # self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-            # --- Example: Attempt to set FPS ---
-            # self.camera.set(cv2.CAP_PROP_FPS, 30)
-            # --- Example: Disable autofocus (if supported) ---
-            # self.camera.set(cv2.CAP_PROP_AUTOFOCUS, 0) 
-            # --- Example: Set brightness (value range is camera dependent) ---
-            # self.camera.set(cv2.CAP_PROP_BRIGHTNESS, 128) # Example value
-
             if not self.camera.isOpened():
                 QMessageBox.critical(self, "Error", "Could not open camera!")
                 self.camera = None
