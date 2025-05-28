@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from ultralytics import YOLO
-
+import Database
 
 
 class ObjectDetectionGUI(QMainWindow):
@@ -313,20 +313,20 @@ class ObjectDetectionGUI(QMainWindow):
             self.camera_label.setPixmap(QPixmap.fromImage(scaled_image))
     
     def update_results(self, results):
-        text = "Detected Objects:\n"
+        text = ""
         for result in results:
             for box in result.boxes:
                 cls = result.names[int(box.cls[0])]
                 conf = float(box.conf[0])
-                text += f"{cls}: {conf:.2f}\n"
+                text += f"{cls} : {conf:.2f}\n"
         self.results_text.setText(text)
     
     def save_results(self):
-        filename, _ = QFileDialog.getSaveFileName(self, "Save Results", "", "Text Files (*.txt)")
-        if filename:
-            with open(filename, 'w') as f:
-                f.write(self.results_text.toPlainText())
-            QMessageBox.information(self, "Success", "Results saved successfully!")
+
+        text = self.results_text.toPlainText()
+        objects, accuracys = text.split(":",1)
+        Database
+        QMessageBox.information(self, "Success", "Results saved successfully!")
 
 def main():
     app = QApplication(sys.argv)
