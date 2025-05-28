@@ -35,5 +35,5 @@ def gathering_objects():
 
 #creating_table()
 inserting_table("Object Name","Accuracy")
-gathering_objects()
+
 
