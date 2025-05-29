@@ -322,11 +322,15 @@ class ObjectDetectionGUI(QMainWindow):
         self.results_text.setText(text)
     
     def save_results(self):
-
-        text = self.results_text.toPlainText()
-        objects, accuracys = text.split(":",1)
         Database.creating_table()
-        Database.inserting_table(objects,accuracys)
+        text = self.results_text.toPlainText()
+        lines = text.splitlines()
+
+        for line in lines:
+            if ":" in line:
+                obj , acc = line.split(":",1)
+                Database.inserting_table(obj,acc)
+
         QMessageBox.information(self, "Success", "Results saved successfully!")
 
 def main():
