@@ -4,6 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from ultralytics import YOLO
+import Database
 
 
 class ObjectDetectionGUI(QMainWindow):
@@ -234,16 +235,6 @@ class ObjectDetectionGUI(QMainWindow):
         if self.camera is None:
             self.camera = cv2.VideoCapture(0)
 
-            # --- Example: Attempt to set resolution ---
-            # self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-            # self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-            # --- Example: Attempt to set FPS ---
-            # self.camera.set(cv2.CAP_PROP_FPS, 30)
-            # --- Example: Disable autofocus (if supported) ---
-            # self.camera.set(cv2.CAP_PROP_AUTOFOCUS, 0) 
-            # --- Example: Set brightness (value range is camera dependent) ---
-            # self.camera.set(cv2.CAP_PROP_BRIGHTNESS, 128) # Example value
-
             if not self.camera.isOpened():
                 QMessageBox.critical(self, "Error", "Could not open camera!")
                 self.camera = None
@@ -307,8 +298,13 @@ class ObjectDetectionGUI(QMainWindow):
                 
                 # Update results text
                 self.update_results(results)
-            
-            # Convert frame to Qt format and display
+
+                        # Convert frame to Qt format and display
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            h, w, ch = rgb_frame.shape
+            bytes_per_line = ch * w
+            qt_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
+            scaled_image = qt_image.scaled(self.camera_label.size(), Qt.KeepAspectRatio)            
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
@@ -317,27 +313,29 @@ class ObjectDetectionGUI(QMainWindow):
             self.camera_label.setPixmap(QPixmap.fromImage(scaled_image))
     
     def update_results(self, results):
-        text = "Detected Objects:\n"
+        text = ""
         for result in results:
             for box in result.boxes:
                 cls = result.names[int(box.cls[0])]
                 conf = float(box.conf[0])
-                text += f"{cls}: {conf:.2f}\n"
+                text += f"{cls} : {conf:.2f}\n"
         self.results_text.setText(text)
     
     def save_results(self):
-        filename, _ = QFileDialog.getSaveFileName(self, "Save Results", "", "Text Files (*.txt)")
-        if filename:
-            with open(filename, 'w') as f:
-                f.write(self.results_text.toPlainText())
-            QMessageBox.information(self, "Success", "Results saved successfully!")
+        Database.creating_table()
+        text = self.results_text.toPlainText()
+        lines = text.splitlines()
+
+        for line in lines:
+            if ":" in line:
+                obj , acc = line.split(":",1)
+                Database.inserting_table(obj,acc)
+
+        QMessageBox.information(self, "Success", "Results saved successfully!")
 
 def main():
     app = QApplication(sys.argv)
-    app.setStyle('Fusion')  # Modern looking style
+    app.setStyle('Fusion')
     window = ObjectDetectionGUI()
     window.show()
-    sys.exit(app.exec_()) 
-
-
-
+    sys.exit(app.exec_())
