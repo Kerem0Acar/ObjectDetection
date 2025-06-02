@@ -115,6 +115,7 @@ class ObjectDetectionGUI(QMainWindow):
         self.timer = None
         self.model = None
         self.is_detecting = False
+        self.detected_objects = {}  # Dictionary to store detected objects and their confidences
         
         # Create the main widget and layout
         main_widget = QWidget()
@@ -326,12 +327,18 @@ class ObjectDetectionGUI(QMainWindow):
             self.camera_label.setPixmap(QPixmap.fromImage(scaled_image))
     
     def update_results(self, results):
-        text = ""
+        # Update the detected_objects dictionary with new results
         for result in results:
             for box in result.boxes:
                 cls = result.names[int(box.cls[0])]
                 conf = float(box.conf[0])
-                text += f"{cls} : {conf:.2f}\n"
+                self.detected_objects[cls] = conf
+        
+        # Create text from the dictionary
+        text = ""
+        for obj, conf in self.detected_objects.items():
+            text += f"{obj} : {conf:.2f}\n"
+        
         self.results_text.setText(text)
     
     def save_results(self):
