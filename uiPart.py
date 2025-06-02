@@ -229,6 +229,19 @@ class ObjectDetectionGUI(QMainWindow):
         """)
         right_panel.addWidget(self.save_btn)
         
+        # Add Gather Data button next to Save Results
+        self.gather_data_btn = QPushButton("Gather Data")
+        self.gather_data_btn.clicked.connect(self.gather_data)
+        self.gather_data_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #2e7d32;
+            }
+            QPushButton:hover {
+                background-color: #388e3c;
+            }
+        """)
+        right_panel.addWidget(self.gather_data_btn)
+        
         layout.addLayout(right_panel)
         
     def toggle_camera(self):
@@ -332,6 +345,9 @@ class ObjectDetectionGUI(QMainWindow):
                 Database.inserting_table(obj,acc)
 
         QMessageBox.information(self, "Success", "Results saved successfully!")
+        
+    def gather_data(self):
+        pass
 
 def main():
     app = QApplication(sys.argv)
