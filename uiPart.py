@@ -4,6 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from ultralytics import YOLO
+import Database
 
 
 class ObjectDetectionGUI(QMainWindow):
@@ -114,6 +115,7 @@ class ObjectDetectionGUI(QMainWindow):
         self.timer = None
         self.model = None
         self.is_detecting = False
+        self.detected_objects = {}  # Dictionary to store detected objects and their confidences
         
         # Create the main widget and layout
         main_widget = QWidget()
@@ -228,21 +230,24 @@ class ObjectDetectionGUI(QMainWindow):
         """)
         right_panel.addWidget(self.save_btn)
         
+        # Add Gather Data button next to Save Results
+        self.gather_data_btn = QPushButton("Gather Data")
+        self.gather_data_btn.clicked.connect(self.gather_data)
+        self.gather_data_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #2e7d32;
+            }
+            QPushButton:hover {
+                background-color: #388e3c;
+            }
+        """)
+        right_panel.addWidget(self.gather_data_btn)
+        
         layout.addLayout(right_panel)
         
     def toggle_camera(self):
         if self.camera is None:
             self.camera = cv2.VideoCapture(0)
-
-            # --- Example: Attempt to set resolution ---
-            # self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-            # self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-            # --- Example: Attempt to set FPS ---
-            # self.camera.set(cv2.CAP_PROP_FPS, 30)
-            # --- Example: Disable autofocus (if supported) ---
-            # self.camera.set(cv2.CAP_PROP_AUTOFOCUS, 0) 
-            # --- Example: Set brightness (value range is camera dependent) ---
-            # self.camera.set(cv2.CAP_PROP_BRIGHTNESS, 128) # Example value
 
             if not self.camera.isOpened():
                 QMessageBox.critical(self, "Error", "Could not open camera!")
@@ -322,20 +327,34 @@ class ObjectDetectionGUI(QMainWindow):
             self.camera_label.setPixmap(QPixmap.fromImage(scaled_image))
     
     def update_results(self, results):
-        text = "Detected Objects:\n"
+        # Update the detected_objects dictionary with new results
         for result in results:
             for box in result.boxes:
                 cls = result.names[int(box.cls[0])]
                 conf = float(box.conf[0])
-                text += f"{cls}: {conf:.2f}\n"
+                self.detected_objects[cls] = conf
+        
+        # Create text from the dictionary
+        text = ""
+        for obj, conf in self.detected_objects.items():
+            text += f"{obj} : {conf:.2f}\n"
+        
         self.results_text.setText(text)
     
     def save_results(self):
-        filename, _ = QFileDialog.getSaveFileName(self, "Save Results", "", "Text Files (*.txt)")
-        if filename:
-            with open(filename, 'w') as f:
-                f.write(self.results_text.toPlainText())
-            QMessageBox.information(self, "Success", "Results saved successfully!")
+        Database.creating_table()
+        text = self.results_text.toPlainText()
+        lines = text.splitlines()
+
+        for line in lines:
+            if ":" in line:
+                obj , acc = line.split(":",1)
+                Database.inserting_table(obj,acc)
+
+        QMessageBox.information(self, "Success", "Results saved successfully!")
+        
+    def gather_data(self):
+        pass
 
 def main():
     app = QApplication(sys.argv)
