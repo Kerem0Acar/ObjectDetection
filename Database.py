@@ -37,9 +37,3 @@ def gathering_objects():
 
     for row in rows:
        an.addNote(row[0],row[1],row[2])
-
-
-
-
-
-gathering_objects()
