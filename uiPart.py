@@ -354,7 +354,8 @@ class ObjectDetectionGUI(QMainWindow):
         QMessageBox.information(self, "Success", "Results saved successfully!")
         
     def gather_data(self):
-        pass
+        Database.gathering_objects()
+        print("All data has been gathered.")
 
 def main():
     app = QApplication(sys.argv)
