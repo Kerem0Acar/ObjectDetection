@@ -115,6 +115,7 @@ class ObjectDetectionGUI(QMainWindow):
         self.timer = None
         self.model = None
         self.is_detecting = False
+        self.detected_objects = {}  # Dictionary to store detected objects and their confidences
         
         # Create the main widget and layout
         main_widget = QWidget()
@@ -229,6 +230,19 @@ class ObjectDetectionGUI(QMainWindow):
         """)
         right_panel.addWidget(self.save_btn)
         
+        # Add Gather Data button next to Save Results
+        self.gather_data_btn = QPushButton("Gather Data")
+        self.gather_data_btn.clicked.connect(self.gather_data)
+        self.gather_data_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #2e7d32;
+            }
+            QPushButton:hover {
+                background-color: #388e3c;
+            }
+        """)
+        right_panel.addWidget(self.gather_data_btn)
+        
         layout.addLayout(right_panel)
         
     def toggle_camera(self):
@@ -313,12 +327,18 @@ class ObjectDetectionGUI(QMainWindow):
             self.camera_label.setPixmap(QPixmap.fromImage(scaled_image))
     
     def update_results(self, results):
-        text = ""
+        # Update the detected_objects dictionary with new results
         for result in results:
             for box in result.boxes:
                 cls = result.names[int(box.cls[0])]
                 conf = float(box.conf[0])
-                text += f"{cls} : {conf:.2f}\n"
+                self.detected_objects[cls] = conf
+        
+        # Create text from the dictionary
+        text = ""
+        for obj, conf in self.detected_objects.items():
+            text += f"{obj} : {conf:.2f}\n"
+        
         self.results_text.setText(text)
     
     def save_results(self):
@@ -332,6 +352,9 @@ class ObjectDetectionGUI(QMainWindow):
                 Database.inserting_table(obj,acc)
 
         QMessageBox.information(self, "Success", "Results saved successfully!")
+        
+    def gather_data(self):
+        pass
 
 def main():
     app = QApplication(sys.argv)
