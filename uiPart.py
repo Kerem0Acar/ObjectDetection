@@ -13,7 +13,7 @@ class ObjectDetectionGUI(QMainWindow):
         self.setWindowTitle("Object Detection System")
         self.setGeometry(100, 100, 1200, 800)
         
-        # Set application style
+        #Style
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #2b2b2b;
