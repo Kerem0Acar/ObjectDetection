@@ -25,6 +25,9 @@ def inserting_table(objectName,accuracy):
     date_string = now.strftime("%d-%m-%Y %H:%M:%S")
 
     cursor.execute("INSERT INTO Objects (ObjectName,Accuracy, Date) VALUES (?, ?, ?)",(objectName,accuracy,date_string))
+
+    gathering_objects()
+
     conn.commit()
 
 #Saving object in Notepad
