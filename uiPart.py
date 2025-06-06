@@ -110,6 +110,24 @@ class ObjectDetectionGUI(QMainWindow):
             QSlider::handle:horizontal:hover {
                 background: #1565c0;
             }
+            QMessageBox {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            QMessageBox QLabel {
+                color: #ffffff;
+            }
+            QMessageBox QPushButton {
+                background-color: #0d47a1;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            QMessageBox QPushButton:hover {
+                background-color: #1565c0;
+            }
         """)
         
         # Initialize variables
@@ -361,6 +379,7 @@ class ObjectDetectionGUI(QMainWindow):
     def gather_data(self):
         Database.gathering_objects()
         print("All data has been gathered.")
+        QMessageBox.information(self,"Data gathering is successful")
 
 def main():
     app = QApplication(sys.argv)
