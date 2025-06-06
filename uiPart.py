@@ -86,10 +86,12 @@ class ObjectDetectionGUI(QMainWindow):
                 padding: 0 5px;
             }
             QTextEdit {
-                background-color: #424242;
+                background-color: #1a1a1a;
                 color: #ffffff;
-                border: none;
+                border: 1px solid #424242;
                 border-radius: 4px;
+                padding: 8px;
+                font-size: 13px;
             }
             QSlider::groove:horizontal {
                 border: 1px solid #999999;
@@ -344,15 +346,18 @@ class ObjectDetectionGUI(QMainWindow):
     def save_results(self):
         Database.creating_table()
         text = self.results_text.toPlainText()
-        lines = text.splitlines()
+        if not text:
+            QMessageBox.information(self, "Failed", "Text cannot be empty!")
+        else:
+            lines = text.splitlines()
 
-        for line in lines:
-            if ":" in line:
-                obj , acc = line.split(":",1)
-                Database.inserting_table(obj,acc)
+            for line in lines:
+                if ":" in line:
+                    obj, acc = line.split(":", 1)
+                    Database.inserting_table(obj, acc)
 
-        QMessageBox.information(self, "Success", "Results saved successfully!")
-        
+            QMessageBox.information(self, "Success", "Results saved successfully!")
+
     def gather_data(self):
         Database.gathering_objects()
         print("All data has been gathered.")
