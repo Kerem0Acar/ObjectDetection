@@ -1,5 +1,7 @@
 from datetime import datetime
 import sqlite3
+import AddNotepad as an
+
 
 conn = sqlite3.connect("ObjectDetection.db")
 cursor = conn.cursor()
@@ -25,15 +27,16 @@ def inserting_table(objectName,accuracy):
     cursor.execute("INSERT INTO Objects (ObjectName,Accuracy, Date) VALUES (?, ?, ?)",(objectName,accuracy,date_string))
     conn.commit()
 
-#Gathering object
+#Saving object in Notepad
 def gathering_objects():
     cursor.execute("SELECT * FROM Objects")
     rows = cursor.fetchall()
 
     for row in rows:
-        print(row)
-
-#creating_table()
-inserting_table("Object Name","Accuracy")
+       an.addNote(row[0],row[1],row[2])
 
 
+
+
+
+gathering_objects()
