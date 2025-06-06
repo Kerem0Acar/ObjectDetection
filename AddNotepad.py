@@ -15,9 +15,6 @@ def checkNotepad():
     if os.path.exists(file_path):
         print(f"{file_path} is already exist" )
 
-def getObject():
-    pass
-
 
 def addNote(noteText,accuracy,date):
     new_note = {'ObjectName': noteText, 'Accuracy': accuracy,'Date': date}
@@ -25,5 +22,3 @@ def addNote(noteText,accuracy,date):
     notepad = notepad._append(new_note,ignore_index=True)
     notepad.to_csv(file_path,index=False)
 
-def check():
-    print("Checking")
