@@ -375,6 +375,7 @@ class ObjectDetectionGUI(QMainWindow):
                     Database.inserting_table(obj, acc)
 
             QMessageBox.information(self, "Success", "Results saved successfully!")
+        self.results_text.setText("")
 
     def gather_data(self):
         Database.gathering_objects()
